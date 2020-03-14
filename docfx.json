@@ -1,0 +1,65 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "ext/Silk.NET/Silk.NET.sln"
+          ]
+        }
+      ],
+      "dest": "silk.net/api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/api/**.yml",
+          "**/api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "**.md",
+          "**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**",
+          "favicons/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "**/apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "docs/**"
+        ]
+      }
+    ],
+    "dest": "docs",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default"
+    ],
+    "postProcessors": [],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false
+  }
+}
