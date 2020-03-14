@@ -1,2 +1,9 @@
+- name: API Reference
+  href: api/toc.yml
+  topicHref: api/
+  homepage: api/index.md
 - name: Introduction
   href: intro.md
+- name: OpenGL Tutorials
+  href: opengl/toc.yml
+  topicHref: opengl/chapter1/1-hello-window.md

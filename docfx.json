@@ -10,7 +10,10 @@
       ],
       "dest": "silk.net/api",
       "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "disableDefaultFilter": false,
+      "properties":{
+        "TargetFramework": "netstandard2.0"
+      }
     }
   ],
   "build": {
