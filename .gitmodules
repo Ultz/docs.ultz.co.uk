@@ -1,0 +1,3 @@
+[submodule "ext/Silk.NET"]
+	path = ext/Silk.NET
+	url = https://github.com/Ultz/Silk.NET/
