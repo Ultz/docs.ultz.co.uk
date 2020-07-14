@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>docs.gl </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="docs.gl ">
+    <meta name="generator" content="docfx 2.56.1.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="docsgl">docs.gl</h1>
+
+<p><a href="http://docs.gl">docs.gl</a> is a public domain web scaffolding for the OpenGL documentation.
+The actual documentation website provided by Khronos is in frames and poorly formatted,
+difficult to navigate and search. docs.gl aims to improve the form factor and quality of
+the OpenGL documentation.</p>
+<h2 id="contributions-welcome">Contributions Welcome</h2>
+<p>docs.gl should be thought of as a public wiki backed by GitHub. If you think you can improve
+the documentation, please consider submitting a pull request. I've uploaded all of the GL
+version specifications <a href="https://dl.dropboxusercontent.com/u/4205810/all-opengl-docs.zip">here</a> for convenience.</p>
+<h2 id="how-to-build-it">How To Build It</h2>
+<p>docs.gl is a python script that reads each man page, processes it, and outputs static HTML.
+There is no database or server side scripting. All of the templating and processing is done
+at build time by the python script. It is executed like this:</p>
+<pre><code>python compile.py
+</code></pre>
+<p>If you're building for a final release, then you can use the <code>--full</code> parameter which does
+HTML minification and Unicode processing as well. It looks like this:</p>
+<pre><code>python compile.py --full
+</code></pre>
+<p>If you are running Windows, there are a build.bat and a build_full.bat for convenience. When
+the script is done building, the completed site will be in a folder named <code>htdocs</code>.</p>
+<h2 id="file-structure">File Structure</h2>
+<p>8 directories called <code>el3</code> <code>sl4</code> <code>es1</code> <code>es2</code> <code>es3</code> <code>gl2</code> <code>gl3</code> and <code>gl4</code> contain the manual pages for
+each OpenGL and GLSL command. They are only the inner HTML with header/footer elements such as <code>head</code>
+and <code>html</code> stripped out. These pages are read and processed by <code>compile.py</code> to produce the
+final site.</p>
+<p>The <code>html</code> directory contains further resources for compiling the site. Files sitting
+directly in the <code>html</code> directory are template files which are used to further process the
+manual pages. Inside the template files are tokens that <code>compile.py</code> searches for and
+dynamically replaces during the compilation process. For example, the token <code>{$current_api}</code>
+will be replaced with <code>3.3</code> or <code>4.2</code> depending on the latest version that the command being
+compiled is available for. All content in the site that changes based on what manual page is
+being compiled is handled in this way.</p>
+<p>Files in the <code>copy</code> folder are used without changes.</p>
+<p>Files in the <code>examples</code> folder contain source code examples used in the manual pages. In
+these files a special token is used to provide a link to a command page. For example
+<code>{%glBindTexture}</code> will provide a link to <a href="http://docs.gl/gl4/glBindTexture">http://docs.gl/gl4/glBindTexture</a> if the example
+appears in a GL4 page. If the example appears in a gl3 page, the link will be updated
+accordingly.</p>
+<p>In the main directory there are some additional helper python scripts. <code>opengl.py</code> and <code>glsl.py</code> contains
+helper tables, (eg which commands appear in which versions) tables specifying which examples
+should appear on which pages, and tables specifying the categories that appear in the table
+of contents of each page. <code>insert_additional.py</code>, <code>make_copyright.py</code>, and <code>strip.py</code> are
+special one-time-use programs that were used to process the manual pages after they were
+initially downloaded from Khronos. They could be reused for additional processing.
+<code>read_spec.py</code> reads the XML OpenGL spec file found in <code>specs/gl.xml</code> and outputs
+<code>opengl_spec.py</code>, which contains the raw data on which commands belong to which versions.
+<code>opengl_spec.py</code> should only have to be re-generated when Khronos updates the spec.</p>
+<h2 id="to-do">To Do</h2>
+<ul>
+<li>Extensions. Display a list of which versions an extension is available for. Display which extension introduces a command.</li>
+<li>Display on each page &quot;Core in version/core since version&quot; like the <a href="http://www.opengl.org/wiki/GlBindTexture">OpenGL Wiki does</a></li>
+<li>Integrate information from the <a href="http://www.opengl.org/wiki/Common_Mistakes">common mistakes</a> file into the page for each command they pertain to</li>
+<li>Update each page with any information that may be in the spec but missing in the manual</li>
+<li>Display on each page which commands are likely to cause a pipeline stall (eg glGet)</li>
+<li>Display in the ToC on the left which GLSL commands can only be used in certain languages (eg VS, CS, FS, etc)</li>
+<li>CamelCase Search - eg BFDLI finds glBindFragDataLocationIndexed</li>
+<li>GLSL 1/3</li>
+<li>WebGL</li>
+<li>GLSL syntax cheat sheets. E.G. attribute/varying vs in/out</li>
+</ul>
+<p>Thanks to the great people in Freenode ##opengl who provided me good feedback while I was
+writing this.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BSVino/docs.gl/blob/f97bd08349dfd5867a4300e04e9db803c71a2fb9/readme.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

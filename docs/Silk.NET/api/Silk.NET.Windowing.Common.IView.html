@@ -1,0 +1,860 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IView
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IView
+   ">
+    <meta name="generator" content="docfx 2.56.1.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Silk.NET.Windowing.Common.IView">
+  
+  
+  <h1 id="Silk_NET_Windowing_Common_IView" data-uid="Silk.NET.Windowing.Common.IView" class="text-break">Interface IView
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a window view.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_UseSingleThreadedWindow">IViewProperties.UseSingleThreadedWindow</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_ShouldSwapAutomatically">IViewProperties.ShouldSwapAutomatically</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_Size">IViewProperties.Size</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_FramesPerSecond">IViewProperties.FramesPerSecond</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_UpdatesPerSecond">IViewProperties.UpdatesPerSecond</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_API">IViewProperties.API</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_VSync">IViewProperties.VSync</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_RunningSlowTolerance">IViewProperties.RunningSlowTolerance</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_VideoMode">IViewProperties.VideoMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_PreferredDepthBufferBits">IViewProperties.PreferredDepthBufferBits</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Silk.NET.Windowing.Common.html">Silk.NET.Windowing.Common</a></h6>
+  <h6><strong>Assembly</strong>: Silk.NET.Windowing.Common.dll</h6>
+  <h5 id="Silk_NET_Windowing_Common_IView_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IView : IViewProperties</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Handle.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Handle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L19">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_Handle_" data-uid="Silk.NET.Windowing.Common.IView.Handle*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_Handle" data-uid="Silk.NET.Windowing.Common.IView.Handle">Handle</h4>
+  <div class="markdown level1 summary"><p>A handle to the underlying window.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IntPtr Handle { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IntPtr</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_IsClosing.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.IsClosing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L34">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_IsClosing_" data-uid="Silk.NET.Windowing.Common.IView.IsClosing*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_IsClosing" data-uid="Silk.NET.Windowing.Common.IView.IsClosing">IsClosing</h4>
+  <div class="markdown level1 summary"><p>Determines whether the underlying platform has requested the window to close.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsClosing { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_IsCurrentContext.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.IsCurrentContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L24">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_IsCurrentContext_" data-uid="Silk.NET.Windowing.Common.IView.IsCurrentContext*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_IsCurrentContext" data-uid="Silk.NET.Windowing.Common.IView.IsCurrentContext">IsCurrentContext</h4>
+  <div class="markdown level1 summary"><p>Determines whether the context is current on this thread.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsCurrentContext { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_IsRunningSlowly.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.IsRunningSlowly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L41">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_IsRunningSlowly_" data-uid="Silk.NET.Windowing.Common.IView.IsRunningSlowly*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_IsRunningSlowly" data-uid="Silk.NET.Windowing.Common.IView.IsRunningSlowly">IsRunningSlowly</h4>
+  <div class="markdown level1 summary"><p>If true, the window has failed to reach the target framerate for multiple consecutive frames, as defined
+in <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_RunningSlowTolerance">RunningSlowTolerance</a>. You can use this to do things such as lowering
+visual fidelity to increase framerates on lower-end machines.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsRunningSlowly { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_IsVulkanSupported.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.IsVulkanSupported%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L29">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_IsVulkanSupported_" data-uid="Silk.NET.Windowing.Common.IView.IsVulkanSupported*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_IsVulkanSupported" data-uid="Silk.NET.Windowing.Common.IView.IsVulkanSupported">IsVulkanSupported</h4>
+  <div class="markdown level1 summary"><p>Determines whether Vulkan functions are supported on this window.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsVulkanSupported { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_ClearContext.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.ClearContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L146">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_ClearContext_" data-uid="Silk.NET.Windowing.Common.IView.ClearContext*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_ClearContext" data-uid="Silk.NET.Windowing.Common.IView.ClearContext">ClearContext()</h4>
+  <div class="markdown level1 summary"><p>If this window's context is current on this thread, it is cleared from the thread (i.e. made non-current).
+To make all contexts non-current, use <see cref="!:IWindowPlatform.ClearCurrent"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearContext()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Close.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Close%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L111">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_Close_" data-uid="Silk.NET.Windowing.Common.IView.Close*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_Close" data-uid="Silk.NET.Windowing.Common.IView.Close">Close()</h4>
+  <div class="markdown level1 summary"><p>Close this window.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Close()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_DoEvents.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.DoEvents%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L91">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_DoEvents_" data-uid="Silk.NET.Windowing.Common.IView.DoEvents*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_DoEvents" data-uid="Silk.NET.Windowing.Common.IView.DoEvents">DoEvents()</h4>
+  <div class="markdown level1 summary"><p>Polls the underlying platform for events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DoEvents()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_DoRender.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.DoRender%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L81">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_DoRender_" data-uid="Silk.NET.Windowing.Common.IView.DoRender*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_DoRender" data-uid="Silk.NET.Windowing.Common.IView.DoRender">DoRender()</h4>
+  <div class="markdown level1 summary"><p>Calls the Render event. On a multi-threaded window, this will run on an internally managed thread.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DoRender()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_DoUpdate.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.DoUpdate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L86">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_DoUpdate_" data-uid="Silk.NET.Windowing.Common.IView.DoUpdate*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_DoUpdate" data-uid="Silk.NET.Windowing.Common.IView.DoUpdate">DoUpdate()</h4>
+  <div class="markdown level1 summary"><p>Calls the Update event. On a multi-threaded window, this can run on any thread.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DoUpdate()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Initialize.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L76">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_Initialize_" data-uid="Silk.NET.Windowing.Common.IView.Initialize*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_Initialize" data-uid="Silk.NET.Windowing.Common.IView.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"><p>Creates the window on the underlying platform.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Initialize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Invoke_Delegate_.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Invoke(Delegate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L132">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_Invoke_" data-uid="Silk.NET.Windowing.Common.IView.Invoke*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_Invoke_Delegate_" data-uid="Silk.NET.Windowing.Common.IView.Invoke(Delegate)">Invoke(Delegate)</h4>
+  <div class="markdown level1 summary"><p>Invokes this delegate on the window's main thread.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object Invoke(Delegate d)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Delegate</span></td>
+        <td><span class="parametername">d</span></td>
+        <td><p>The delegate to run.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>An object returned from the delegate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Invoke_Delegate_System_Object___.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Invoke(Delegate%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L140">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_Invoke_" data-uid="Silk.NET.Windowing.Common.IView.Invoke*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_Invoke_Delegate_System_Object___" data-uid="Silk.NET.Windowing.Common.IView.Invoke(Delegate,System.Object[])">Invoke(Delegate, Object[])</h4>
+  <div class="markdown level1 summary"><p>Invokes this delegate on the window's main thread, with the provided arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object Invoke(Delegate d, params object[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Delegate</span></td>
+        <td><span class="parametername">d</span></td>
+        <td><p>The delegate to run.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The delegate's arguments.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>An object returned from the delegate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_MakeCurrent.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.MakeCurrent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L106">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_MakeCurrent_" data-uid="Silk.NET.Windowing.Common.IView.MakeCurrent*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_MakeCurrent" data-uid="Silk.NET.Windowing.Common.IView.MakeCurrent">MakeCurrent()</h4>
+  <div class="markdown level1 summary"><p>Makes the OpenGL context current on the current thread.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void MakeCurrent()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_PointToClient_Point_.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.PointToClient(Point)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L118">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_PointToClient_" data-uid="Silk.NET.Windowing.Common.IView.PointToClient*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_PointToClient_Point_" data-uid="Silk.NET.Windowing.Common.IView.PointToClient(Point)">PointToClient(Point)</h4>
+  <div class="markdown level1 summary"><p>Converts this point to client coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Point PointToClient(Point point)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Point</span></td>
+        <td><span class="parametername">point</span></td>
+        <td><p>The point to transform.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Point</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_PointToScreen_Point_.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.PointToScreen(Point)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L125">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_PointToScreen_" data-uid="Silk.NET.Windowing.Common.IView.PointToScreen*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_PointToScreen_Point_" data-uid="Silk.NET.Windowing.Common.IView.PointToScreen(Point)">PointToScreen(Point)</h4>
+  <div class="markdown level1 summary"><p>Converts this point to screen coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Point PointToScreen(Point point)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Point</span></td>
+        <td><span class="parametername">point</span></td>
+        <td><p>The point to transform.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Point</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Reset.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L96">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_Reset_" data-uid="Silk.NET.Windowing.Common.IView.Reset*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_Reset" data-uid="Silk.NET.Windowing.Common.IView.Reset">Reset()</h4>
+  <div class="markdown level1 summary"><p>Unloads the window on the underlying platform.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Reset()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_SwapBuffers.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.SwapBuffers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L101">View Source</a>
+  </span>
+  <a id="Silk_NET_Windowing_Common_IView_SwapBuffers_" data-uid="Silk.NET.Windowing.Common.IView.SwapBuffers*"></a>
+  <h4 id="Silk_NET_Windowing_Common_IView_SwapBuffers" data-uid="Silk.NET.Windowing.Common.IView.SwapBuffers">SwapBuffers()</h4>
+  <div class="markdown level1 summary"><p>Swaps the front and back buffers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SwapBuffers()</code></pre>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Closing.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Closing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L51">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Windowing_Common_IView_Closing" data-uid="Silk.NET.Windowing.Common.IView.Closing">Closing</h4>
+  <div class="markdown level1 summary"><p>Raised when the window is about to close.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action Closing</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_FocusChanged.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.FocusChanged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L56">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Windowing_Common_IView_FocusChanged" data-uid="Silk.NET.Windowing.Common.IView.FocusChanged">FocusChanged</h4>
+  <div class="markdown level1 summary"><p>Raised when the window focus changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action&lt;bool&gt; FocusChanged</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Load.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Load%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L61">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Windowing_Common_IView_Load" data-uid="Silk.NET.Windowing.Common.IView.Load">Load</h4>
+  <div class="markdown level1 summary"><p>Raised when the window first begins to run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action Load</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Render.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Render%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L71">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Windowing_Common_IView_Render" data-uid="Silk.NET.Windowing.Common.IView.Render">Render</h4>
+  <div class="markdown level1 summary"><p>Raised when a frame should be rendered.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action&lt;double&gt; Render</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Resize.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Resize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L46">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Windowing_Common_IView_Resize" data-uid="Silk.NET.Windowing.Common.IView.Resize">Resize</h4>
+  <div class="markdown level1 summary"><p>Raised when the window is resized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action&lt;Size&gt; Resize</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<span class="xref">Size</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView_Update.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView.Update%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L66">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Windowing_Common_IView_Update" data-uid="Silk.NET.Windowing.Common.IView.Update">Update</h4>
+  <div class="markdown level1 summary"><p>Raised when an update should be run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action&lt;double&gt; Update</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.WindowExtensions.html#Silk_NET_Windowing_Common_WindowExtensions_Invoke__1_Silk_NET_Windowing_Common_IView_Func___0__">WindowExtensions.Invoke&lt;T&gt;(IView, Func&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.WindowExtensions.html#Silk_NET_Windowing_Common_WindowExtensions_Invoke_Silk_NET_Windowing_Common_IView_Action_">WindowExtensions.Invoke(IView, Action)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.WindowExtensions.html#Silk_NET_Windowing_Common_WindowExtensions_Run_Silk_NET_Windowing_Common_IView_">WindowExtensions.Run(IView)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IView.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IView%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IView.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (C) Ultz Limited.</span>
+          </div>
+        </div>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>jquery.cookie   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="jquery.cookie   ">
+    <meta name="generator" content="docfx 2.56.1.0">
+    
+    <link rel="shortcut icon" href="../../../../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../../../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../../../../../index.html">
+                <img id="logo" class="svg" src="../../../../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="jquerycookie-build-status-code-climate">jquery.cookie <a href="https://travis-ci.org/carhartl/jquery-cookie"><img src="https://travis-ci.org/carhartl/jquery-cookie.png?branch=master" alt="Build Status"></a> <a href="https://codeclimate.com/github/carhartl/jquery-cookie"><img src="https://codeclimate.com/github/carhartl/jquery-cookie.png" alt="Code Climate"></a></h1>
+
+<p>A simple, lightweight jQuery plugin for reading, writing and deleting cookies.</p>
+<p><strong>If you're viewing this at <a href="https://github.com/carhartl/jquery-cookie">https://github.com/carhartl/jquery-cookie</a>, you're reading the documentation for the master branch.
+<a href="https://github.com/carhartl/jquery-cookie/tree/v1.4.1">View documentation for the latest release (1.4.1).</a></strong></p>
+<h2 id="build-status-matrix">Build Status Matrix</h2>
+<p><a href="https://saucelabs.com/u/jquery-cookie"><img src="https://saucelabs.com/browser-matrix/jquery-cookie.svg" alt="Selenium Test Status"></a></p>
+<h2 id="installation">Installation</h2>
+<p>Include script <em>after</em> the jQuery library (unless you are packaging scripts somehow else):</p>
+<pre><code class="lang-html">&lt;script src=&quot;/path/to/jquery.cookie.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p><strong>Do not include the script directly from GitHub (<a href="http://raw.github.com/...">http://raw.github.com/...</a>).</strong> The file is being served as text/plain and as such being blocked
+in Internet Explorer on Windows 7 for instance (because of the wrong MIME type). Bottom line: GitHub is not a CDN.</p>
+<p>The plugin can also be loaded as AMD or CommonJS module.</p>
+<h2 id="usage">Usage</h2>
+<p>Create session cookie:</p>
+<pre><code class="lang-javascript">$.cookie('the_cookie', 'the_value');
+</code></pre>
+<p>Create expiring cookie, 7 days from then:</p>
+<pre><code class="lang-javascript">$.cookie('the_cookie', 'the_value', { expires: 7 });
+</code></pre>
+<p>Create expiring cookie, valid across entire site:</p>
+<pre><code class="lang-javascript">$.cookie('the_cookie', 'the_value', { expires: 7, path: '/' });
+</code></pre>
+<p>Read cookie:</p>
+<pre><code class="lang-javascript">$.cookie('the_cookie'); // =&gt; &quot;the_value&quot;
+$.cookie('not_existing'); // =&gt; undefined
+</code></pre>
+<p>Read all available cookies:</p>
+<pre><code class="lang-javascript">$.cookie(); // =&gt; { &quot;the_cookie&quot;: &quot;the_value&quot;, &quot;...remaining&quot;: &quot;cookies&quot; }
+</code></pre>
+<p>Delete cookie:</p>
+<pre><code class="lang-javascript">// Returns true when cookie was found, false when no cookie was found...
+$.removeCookie('the_cookie');
+
+// Same path as when the cookie was written...
+$.removeCookie('the_cookie', { path: '/' });
+</code></pre>
+<p><em>Note: when deleting a cookie, you must pass the exact same path, domain and secure options that were used to set the cookie, unless you're relying on the default options that is.</em></p>
+<h2 id="configuration">Configuration</h2>
+<h3 id="raw">raw</h3>
+<p>By default the cookie value is encoded/decoded when writing/reading, using <code>encodeURIComponent</code>/<code>decodeURIComponent</code>. Bypass this by setting raw to true:</p>
+<pre><code class="lang-javascript">$.cookie.raw = true;
+</code></pre>
+<h3 id="json">json</h3>
+<p>Turn on automatic storage of JSON objects passed as the cookie value. Assumes <code>JSON.stringify</code> and <code>JSON.parse</code>:</p>
+<pre><code class="lang-javascript">$.cookie.json = true;
+</code></pre>
+<h2 id="cookie-options">Cookie Options</h2>
+<p>Cookie attributes can be set globally by setting properties of the <code>$.cookie.defaults</code> object or individually for each call to <code>$.cookie()</code> by passing a plain object to the options argument. Per-call options override the default options.</p>
+<h3 id="expires">expires</h3>
+<pre><code>expires: 365
+</code></pre>
+<p>Define lifetime of the cookie. Value can be a <code>Number</code> which will be interpreted as days from time of creation or a <code>Date</code> object. If omitted, the cookie becomes a session cookie.</p>
+<h3 id="path">path</h3>
+<pre><code>path: '/'
+</code></pre>
+<p>Define the path where the cookie is valid. <em>By default the path of the cookie is the path of the page where the cookie was created (standard browser behavior).</em> If you want to make it available for instance across the entire domain use <code>path: '/'</code>. Default: path of page where the cookie was created.</p>
+<p><strong>Note regarding Internet Explorer:</strong></p>
+<blockquote>
+<p>Due to an obscure bug in the underlying WinINET InternetGetCookie implementation, IE’s document.cookie will not return a cookie if it was set with a path attribute containing a filename.</p>
+</blockquote>
+<p>(From <a href="http://blogs.msdn.com/b/ieinternals/archive/2009/08/20/wininet-ie-cookie-internals-faq.aspx">Internet Explorer Cookie Internals (FAQ)</a>)</p>
+<p>This means one cannot set a path using <code>path: window.location.pathname</code> in case such pathname contains a filename like so: <code>/check.html</code> (or at least, such cookie cannot be read correctly).</p>
+<h3 id="domain">domain</h3>
+<pre><code>domain: 'example.com'
+</code></pre>
+<p>Define the domain where the cookie is valid. Default: domain of page where the cookie was created.</p>
+<h3 id="secure">secure</h3>
+<pre><code>secure: true
+</code></pre>
+<p>If true, the cookie transmission requires a secure protocol (https). Default: <code>false</code>.</p>
+<h2 id="converters">Converters</h2>
+<p>Provide a conversion function as optional last argument for reading, in order to change the cookie's value
+to a different representation on the fly.</p>
+<p>Example for parsing a value into a number:</p>
+<pre><code class="lang-javascript">$.cookie('foo', '42');
+$.cookie('foo', Number); // =&gt; 42
+</code></pre>
+<p>Dealing with cookies that have been encoded using <code>escape</code> (3rd party cookies):</p>
+<pre><code class="lang-javascript">$.cookie.raw = true;
+$.cookie('foo', unescape);
+</code></pre>
+<p>You can pass an arbitrary conversion function.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Check out the <a href="CONTRIBUTING.html">Contributing Guidelines</a></p>
+<h2 id="authors">Authors</h2>
+<p><a href="https://github.com/carhartl">Klaus Hartl</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/carhartl/jquery-cookie/blob/7f88a4e631aba8a8c688fd8999ce6b9bcfd50718/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../../../../styles/main.js"></script>
+  </body>
+</html>

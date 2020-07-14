@@ -4,51 +4,46 @@
       "src": [
         {
           "files": [
-            "ext/Silk.NET/Silk.NET.sln"
+            "ext/Silk.NET/src/**.csproj"
+          ],
+          "exclude": [
+            "ext/Silk.NET/src/Lab/**.csproj",
+            "ext/Silk.NET/src/Core/BuildTools/*.csproj"
           ]
         }
       ],
-      "dest": "silk.net/api",
+      "dest": "Silk.NET/api",
       "disableGitFeatures": false,
-      "disableDefaultFilter": false,
-      "properties":{
-        "TargetFramework": "netstandard2.0"
-      }
+      "disableDefaultFilter": false
     }
   ],
   "build": {
     "content": [
       {
         "files": [
-          "**/api/**.yml",
-          "**/api/index.md"
-        ]
-      },
-      {
-        "files": [
           "**.md",
-          "**/toc.yml",
-          "toc.yml",
-          "*.md"
+          "**.yml"
+        ],
+        "exclude": [
+          "ext/**.md",
+          "ext/**.yml"
         ]
       }
     ],
     "resource": [
       {
         "files": [
-          "images/**",
-          "favicons/**"
+          "resources/**",
+          "**/resources/**"
         ]
       }
     ],
     "overwrite": [
       {
         "files": [
-          "**/apidoc/**.md"
+          "Silk.NET/apidoc/**.md"
         ],
         "exclude": [
-          "obj/**",
-          "docs/**"
         ]
       }
     ],
@@ -56,7 +51,8 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+      "./template"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",

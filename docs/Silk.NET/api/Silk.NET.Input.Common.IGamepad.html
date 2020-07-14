@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IGamepad
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IGamepad
+   ">
+    <meta name="generator" content="docfx 2.56.1.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Silk.NET.Input.Common.IGamepad">
+  
+  
+  <h1 id="Silk_NET_Input_Common_IGamepad" data-uid="Silk.NET.Input.Common.IGamepad" class="text-break">Interface IGamepad
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a gamepad/controller with a set amount of thumbsticks, buttons, and triggers.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Silk.NET.Input.Common.IInputDevice.html#Silk_NET_Input_Common_IInputDevice_Name">IInputDevice.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Input.Common.IInputDevice.html#Silk_NET_Input_Common_IInputDevice_Index">IInputDevice.Index</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Input.Common.IInputDevice.html#Silk_NET_Input_Common_IInputDevice_IsConnected">IInputDevice.IsConnected</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Silk.NET.Input.Common.html">Silk.NET.Input.Common</a></h6>
+  <h6><strong>Assembly</strong>: Silk.NET.Input.Common.dll</h6>
+  <h5 id="Silk_NET_Input_Common_IGamepad_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IGamepad : IInputDevice</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad_Buttons.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad.Buttons%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L19">View Source</a>
+  </span>
+  <a id="Silk_NET_Input_Common_IGamepad_Buttons_" data-uid="Silk.NET.Input.Common.IGamepad.Buttons*"></a>
+  <h4 id="Silk_NET_Input_Common_IGamepad_Buttons" data-uid="Silk.NET.Input.Common.IGamepad.Buttons">Buttons</h4>
+  <div class="markdown level1 summary"><p>A list of all available buttons.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReadOnlyList&lt;Button&gt; Buttons { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="Silk.NET.Input.Common.Button.html">Button</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad_Deadzone.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad.Deadzone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L39">View Source</a>
+  </span>
+  <a id="Silk_NET_Input_Common_IGamepad_Deadzone_" data-uid="Silk.NET.Input.Common.IGamepad.Deadzone*"></a>
+  <h4 id="Silk_NET_Input_Common_IGamepad_Deadzone" data-uid="Silk.NET.Input.Common.IGamepad.Deadzone">Deadzone</h4>
+  <div class="markdown level1 summary"><p>The deadzone for this gamepad.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Deadzone Deadzone { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Silk.NET.Input.Common.Deadzone.html">Deadzone</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad_Thumbsticks.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad.Thumbsticks%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L24">View Source</a>
+  </span>
+  <a id="Silk_NET_Input_Common_IGamepad_Thumbsticks_" data-uid="Silk.NET.Input.Common.IGamepad.Thumbsticks*"></a>
+  <h4 id="Silk_NET_Input_Common_IGamepad_Thumbsticks" data-uid="Silk.NET.Input.Common.IGamepad.Thumbsticks">Thumbsticks</h4>
+  <div class="markdown level1 summary"><p>A list of all available thumbsticks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReadOnlyList&lt;Thumbstick&gt; Thumbsticks { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="Silk.NET.Input.Common.Thumbstick.html">Thumbstick</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad_Triggers.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad.Triggers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L29">View Source</a>
+  </span>
+  <a id="Silk_NET_Input_Common_IGamepad_Triggers_" data-uid="Silk.NET.Input.Common.IGamepad.Triggers*"></a>
+  <h4 id="Silk_NET_Input_Common_IGamepad_Triggers" data-uid="Silk.NET.Input.Common.IGamepad.Triggers">Triggers</h4>
+  <div class="markdown level1 summary"><p>A list of all available triggers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReadOnlyList&lt;Trigger&gt; Triggers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="Silk.NET.Input.Common.Trigger.html">Trigger</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad_VibrationMotors.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad.VibrationMotors%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L34">View Source</a>
+  </span>
+  <a id="Silk_NET_Input_Common_IGamepad_VibrationMotors_" data-uid="Silk.NET.Input.Common.IGamepad.VibrationMotors*"></a>
+  <h4 id="Silk_NET_Input_Common_IGamepad_VibrationMotors" data-uid="Silk.NET.Input.Common.IGamepad.VibrationMotors">VibrationMotors</h4>
+  <div class="markdown level1 summary"><p>A list of all available motors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReadOnlyList&lt;IMotor&gt; VibrationMotors { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="Silk.NET.Input.Common.IMotor.html">IMotor</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad_ButtonDown.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad.ButtonDown%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L47">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Input_Common_IGamepad_ButtonDown" data-uid="Silk.NET.Input.Common.IGamepad.ButtonDown">ButtonDown</h4>
+  <div class="markdown level1 summary"><p>Called when a button is pressed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action&lt;IGamepad, Button&gt; ButtonDown</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="Silk.NET.Input.Common.IGamepad.html">IGamepad</a>, <a class="xref" href="Silk.NET.Input.Common.Button.html">Button</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Silk_NET_Input_Common_IGamepad_ButtonDown_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This event is only called when the button is first pressed, and not every frame where the button is still pressed.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad_ButtonUp.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad.ButtonUp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L55">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Input_Common_IGamepad_ButtonUp" data-uid="Silk.NET.Input.Common.IGamepad.ButtonUp">ButtonUp</h4>
+  <div class="markdown level1 summary"><p>Called when a button is released.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action&lt;IGamepad, Button&gt; ButtonUp</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="Silk.NET.Input.Common.IGamepad.html">IGamepad</a>, <a class="xref" href="Silk.NET.Input.Common.Button.html">Button</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Silk_NET_Input_Common_IGamepad_ButtonUp_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This event is only called when the button is first released, and not every frame where the button is still released.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad_ThumbstickMoved.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad.ThumbstickMoved%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L60">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Input_Common_IGamepad_ThumbstickMoved" data-uid="Silk.NET.Input.Common.IGamepad.ThumbstickMoved">ThumbstickMoved</h4>
+  <div class="markdown level1 summary"><p>Called when a thumbstick is moved.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action&lt;IGamepad, Thumbstick&gt; ThumbstickMoved</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="Silk.NET.Input.Common.IGamepad.html">IGamepad</a>, <a class="xref" href="Silk.NET.Input.Common.Thumbstick.html">Thumbstick</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad_TriggerMoved.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad.TriggerMoved%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L65">View Source</a>
+  </span>
+  <h4 id="Silk_NET_Input_Common_IGamepad_TriggerMoved" data-uid="Silk.NET.Input.Common.IGamepad.TriggerMoved">TriggerMoved</h4>
+  <div class="markdown level1 summary"><p>Called when a trigger is moved.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action&lt;IGamepad, Trigger&gt; TriggerMoved</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="Silk.NET.Input.Common.IGamepad.html">IGamepad</a>, <a class="xref" href="Silk.NET.Input.Common.Trigger.html">Trigger</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_A_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.A(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_B_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.B(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_X_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.X(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_Y_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.Y(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_LeftBumper_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.LeftBumper(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_RightBumper_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.RightBumper(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_Back_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.Back(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_Start_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.Start(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_Home_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.Home(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_LeftStick_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.LeftStick(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_RightStick_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.RightStick(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_DPadUp_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.DPadUp(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_DPadRight_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.DPadRight(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_DPadDown_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.DPadDown(IGamepad)</a>
+  </div>
+  <div>
+      <a class="xref" href="Silk.NET.Input.Common.GamepadExtensions.html#Silk_NET_Input_Common_GamepadExtensions_DPadLeft_Silk_NET_Input_Common_IGamepad_">GamepadExtensions.DPadLeft(IGamepad)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Input_Common_IGamepad.md&amp;value=---%0Auid%3A%20Silk.NET.Input.Common.IGamepad%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Input/Silk.NET.Input.Common/Interfaces/IGamepad.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (C) Ultz Limited.</span>
+          </div>
+        </div>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

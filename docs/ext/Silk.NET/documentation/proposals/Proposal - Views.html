@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Summary </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Summary ">
+    <meta name="generator" content="docfx 2.56.1.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="summary">Summary</h1>
+
+<p>A proposal for the division of core windowing APIs into a new, stripped-down interface for mobile windowing platforms.</p>
+<h1 id="contributors">Contributors</h1>
+<ul>
+<li>Dylan P, Ultz Limited</li>
+<li>Void, Silk.NET Contributors</li>
+</ul>
+<h1 id="current-status">Current Status</h1>
+<ul>
+<li>[x] Proposed</li>
+<li>[x] Discussed with API Review Board (ARB)</li>
+<li>[x] Approved</li>
+<li>[ ] Implemented</li>
+</ul>
+<h1 id="design-decisions">Design Decisions</h1>
+<p>This proposal aims to iron out an API division between views and windows, the former containing only the core windowing APIs and the latter containing the rest. This is in an effort to ensure that we lay out a set of APIs that will ALWAYS be available on every platform we support, and there isn't a way we can do that in the current state of the windowing API.</p>
+<h1 id="proposed-api">Proposed API</h1>
+<h2 id="iviewevents">IViewEvents</h2>
+<pre><code class="lang-cs">internal interface IViewEvents
+{
+        /// &lt;summary&gt;
+        /// Raised when the view is resized.
+        /// &lt;/summary&gt;
+        event Action&lt;Size&gt; Resize;
+
+        /// &lt;summary&gt;
+        /// Raised when the view is about to close.
+        /// &lt;/summary&gt;
+        event Action Closing;
+
+        /// &lt;summary&gt;
+        /// Raised when the view's state is changed.
+        /// &lt;/summary&gt;
+        event Action&lt;WindowState&gt; StateChanged;
+
+        /// &lt;summary&gt;
+        /// Raised when the view focus changes.
+        /// &lt;/summary&gt;
+        event Action&lt;bool&gt; FocusChanged;
+
+        /// &lt;summary&gt;
+        /// Raised when the view first begins to run.
+        /// &lt;/summary&gt;
+        event Action Load;
+
+        /// &lt;summary&gt;
+        /// Raised when an update should be run.
+        /// &lt;/summary&gt;
+        event Action&lt;double&gt; Update;
+
+        /// &lt;summary&gt;
+        /// Raised when a frame should be rendered.
+        /// &lt;/summary&gt;
+        event Action&lt;double&gt; Render;
+}
+</code></pre>
+<h2 id="iwindowevents">IWindowEvents</h2>
+<pre><code class="lang-diff">-    interface IWindowEvents
++    interface IWindowEvents : IViewEvents
+</code></pre>
+<h2 id="iviewfunctions">IViewFunctions</h2>
+<pre><code class="lang-diff">-    interface IWindowFunctions
++    interface IViewFunctions
+</code></pre>
+<h2 id="iviewproperties">IViewProperties</h2>
+<pre><code class="lang-cs">    interface IViewProperties
+    {
+        /// &lt;summary&gt;
+        /// If true, both updates and rendering will happen on the same thread. If false, both updating and rendering
+        /// will be run on their own threads.
+        /// &lt;/summary&gt;
+        bool UseSingleThreadedWindow { get; }
+
+        /// &lt;summary&gt;
+        /// If true, SwapBuffers will be called automatically at the end of each Render event.
+        /// &lt;/summary&gt;
+        bool ShouldSwapAutomatically { get; }
+
+        /// &lt;summary&gt;
+        /// The size of the window in pixels.
+        /// &lt;/summary&gt;
+        /// &lt;remarks&gt;
+        /// &lt;para&gt;
+        /// This will be replaced with an integer vector once System.Numerics supports them.
+        /// &lt;/para&gt;
+        /// &lt;/remarks&gt;
+        Size Size { get; }
+
+        /// &lt;summary&gt;
+        /// The number of rendering operations to run every second.
+        /// &lt;/summary&gt;
+        double FramesPerSecond { get; set; }
+
+        /// &lt;summary&gt;
+        /// The number of update operations to run every second.
+        /// &lt;/summary&gt;
+        double UpdatesPerSecond { get; set; }
+
+        /// &lt;summary&gt;
+        /// The graphics API to use, and associated configurations.
+        /// &lt;/summary&gt;
+        GraphicsAPI API { get; }
+
+        /// &lt;summary&gt;
+        /// The window state.
+        /// &lt;/summary&gt;
+        WindowState WindowState { get; }
+
+        /// &lt;summary&gt;
+        /// The VSync mode.
+        /// &lt;/summary&gt;
+        VSyncMode VSync { get; set; }
+        
+        /// &lt;summary&gt;
+        /// The number of frames the window needs to be running slowly for before &lt;see cref=&quot;IWindow.IsRunningSlowly&quot;/&gt;
+        /// is set to true.
+        /// &lt;/summary&gt;
+        int RunningSlowTolerance { get; set; }
+    }
+</code></pre>
+<h2 id="iwindowproperties">IWindowProperties</h2>
+<pre><code class="lang-diff">-    interface IWindowProperties
++    interface IWindowProperties : IViewProperties
+</code></pre>
+<h2 id="iwindowplatform">IWindowPlatform</h2>
+<pre><code class="lang-diff">+    bool IsViewOnly { get; }
++    IView GetView(ViewOptions opts);
+</code></pre>
+<h2 id="window">Window</h2>
+<pre><code class="lang-diff">+    public bool IsViewOnly { get; }
++    public static IView GetView(ViewOptions opts);
+</code></pre>
+<h2 id="viewoptions">ViewOptions</h2>
+<pre><code class="lang-cs">public struct ViewOptions : IViewProperties
+{
+    // etc
+}
+</code></pre>
+<h2 id="inputwindowextensions">InputWindowExtensions</h2>
+<pre><code class="lang-diff">-    public static IInputContext CreateInput(this IWindow window);
++    public static IInputContext CreateInput(this IView view);
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/documentation/proposals/Proposal - Views.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

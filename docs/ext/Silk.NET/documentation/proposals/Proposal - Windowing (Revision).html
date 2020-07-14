@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Summary </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Summary ">
+    <meta name="generator" content="docfx 2.56.1.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="summary">Summary</h1>
+
+<p>Currently, there's a major flaw in the windowing API in that the user doesn't have much control over the game loop. This leads to problems on platforms such as MacOS where threading issues are more significant. This revision aims to circumvent that.</p>
+<h1 id="contributors">Contributors</h1>
+<ul>
+<li>Dylan P, Ultz Limited</li>
+</ul>
+<h1 id="current-status">Current Status</h1>
+<ul>
+<li>[x] Proposed</li>
+<li>[ ] Discussed with API Review Board (ARB)</li>
+<li>[ ] Approved</li>
+<li>[ ] Implemented</li>
+</ul>
+<h1 id="design-decisions">Design Decisions</h1>
+<ul>
+<li>After encountering some fustrating threading issues on macOS, I've decided to split off all the main portions of the game loop to give the user more control.</li>
+<li>After the split, the implementation of the Run method should be as simple as this:</li>
+</ul>
+<pre><code class="lang-cs">public void Run()
+{
+    Create();
+    while (!IsClosing)
+    {
+        DoEvents();
+        DoUpdate();
+        DoRender();
+    }
+}
+</code></pre>
+<h1 id="proposed-api">Proposed API</h1>
+<h2 id="iwindowfunctions-additions">IWindowFunctions additions</h2>
+<pre><code class="lang-cs">public interface IWindowFunctions
+{
+     /// &lt;summary&gt;
+     /// Polls the underlying backend for window events, and executes them. This does not include Render or Update.
+     /// &lt;/summary&gt;
+     void DoEvents();
+
+     /// &lt;summary&gt;
+     /// Calls the Render event. If a multi-threaded window is used, the Render event will run on the
+     /// render thread managed by the implementation.
+     /// &lt;/summary&gt;
+     void DoRender();
+     // IMPLEMENTATION DETAIL: Delta-time should be managed by the implementation
+     // IMPLEMENTATION DETAIL: Invoke calls should be handled in this call.
+     // IMPLEMENTATION DETAIL: SwapBuffers should be called here if ShouldSwapAutomatically is true.
+
+     /// &lt;summary&gt;
+     /// Calls the Update event. If a multi-threaded window is used, the Update event could run on any thread.
+     /// &lt;/summary&gt;
+     void DoUpdate();
+     // IMPLEMENTATION DETAIL: Delta-time should be managed by the implementation
+
+     /// &lt;summary&gt;
+     /// Makes the OpenGL context current on a given thread.
+     /// &lt;/summary&gt;
+     void MakeCurrent();
+     // IMPLEMENTATION DETAIL: The window must automatically ensure that the context is current
+     // on the render thread if multi-threaded windows are used, so that the user doesn't have
+     // to worry about setting the context current within the Render event.
+
+     /// &lt;summary&gt;
+     /// Calls the Update event. If a multi-threaded window is used, the Update event could run on any thread.
+     /// &lt;/summary&gt;
+     void SwapBuffers();
+
+     /// &lt;summary&gt;
+     /// Runs the default game loop. Must be called by the program entry thread.
+     /// &lt;/summary&gt;
+     void Run();
+
+     /// &lt;summary&gt;
+     /// Creates the window on the underlying platform.
+     /// &lt;/summary&gt;
+     void Create();
+}
+</code></pre>
+<h2 id="iwindowproperties-additions">IWindowProperties additions</h2>
+<pre><code class="lang-cs">public interface IWindowProperties
+{
+    /// &lt;summary&gt;
+    /// Whether this window has been requested to close by the underlying platform.
+    /// &lt;/summary&gt;
+    bool IsClosing { get; } // GLFW: maps to glfwShouldWindowClose
+
+    /// &lt;summary&gt;
+    /// Whether SwapBuffers should automatically be called in the DoRender call.
+    /// &lt;/summary&gt;
+    bool ShouldSwapAutomatically { get; } // Default: true
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/documentation/proposals/Proposal - Windowing (Revision).md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

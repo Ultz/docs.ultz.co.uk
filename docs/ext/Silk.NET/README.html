@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Silk.NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Silk.NET ">
+    <meta name="generator" content="docfx 2.56.1.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="silknet">Silk.NET</h1>
+
+<p><a href="https://nuget.org/packages/Silk.NET"><img src="https://img.shields.io/nuget/v/Silk.NET" alt="NuGet Version"></a> <a href="https://dev.azure.com/UltzLimited/Silk.NET/_packaging?_a=feed&amp;feed=Experimental"><img src="https://img.shields.io/badge/nuget-experimental%20feed-yellow" alt="Preview Feed"></a> <a href="https://dev.azure.com/UltzLimited/Silk.NET/_build/latest?definitionId=2&amp;branchName=master"><img src="https://dev.azure.com/UltzLimited/Silk.NET/_apis/build/status/Ultz.Silk.NET?branchName=master" alt="Build Status"></a> <a href="https://discord.gg/DTHHXRt"><img src="https://img.shields.io/badge/chat%20on-discord-7289DA" alt="Join our Discord"></a></p>
+<p>Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL and OpenAL. Use Silk.NET to add cross-platform 3D graphics, audio, compute and haptics to your C# application.</p>
+<p>Silk.NET works on any .NET Standard 2.0 compliant platform. This includes Xamarin, .NET Framework 4.6.1+, and .NET Core 2.0+.</p>
+<h1 id="features">Features</h1>
+<ul>
+<li><strong>Performance</strong>: We use lesser-known techniques for our native interop which makes our bindings blazing fast.</li>
+<li><strong>Up-to-date</strong>: We've built Silk.NET around the latest versions of the Khronos specifications. This means that Silk.NET includes OpenGL 4.6 (and its <strong>NVIDIA ray-tracing</strong> extensions), OpenGLES 3.2.</li>
+<li><strong>High-level utilities</strong>: We provide high-level abstractions around Windowing and Input APIs, which means your apps can run on any platform without changing a single line.</li>
+<li><strong>Game-ready</strong>: Making games or game engines with Silk.NET is a breeze as you already have everything a game needs - Graphics, Audio, Input, and Windowing; all in one product!</li>
+</ul>
+<h1 id="the-team">The team</h1>
+<p>We currently have 2 maintainers:</p>
+<ul>
+<li><a href="https://github.com/Perksey">Dylan P.</a> from <a href="https://github.com/Ultz">Ultz</a></li>
+<li><a href="https://github.com/devvoid">Void</a> from the open-source community</li>
+</ul>
+<p>As well as 3 community members who we consult with to influence Silk.NET's design:</p>
+<ul>
+<li><a href="https://github.com/maxilevi">Maximiliano L.</a> - developer of <a href="https://projecthedra.com/">Project Hedra</a> using Silk.NET</li>
+<li><a href="https://github.com/AzyIsCool">Aaron P.</a> - Chief Technology Officer at <a href="https://github.com/Ultz">Ultz</a></li>
+<li><a href="https://github.com/frederikja163">Frederik A.</a> - imparting knowledge on those using Silk.NET.</li>
+</ul>
+<p>Silk.NET is governed by the Silk Working Group, made up of all 5 of the above members. Only 2 seats are occupied by members of Ultz, demonstrating and emphasising our commitment to open-source software.</p>
+<h1 id="building-from-source">Building from source</h1>
+<ul>
+<li>Make sure you have the .NET Core SDK installed</li>
+<li>Clone the repository</li>
+<li>Run <code>generator.bat</code> or <code>generator.sh</code> (to generate the bindings)</li>
+<li>Run <code>dotnet build</code></li>
+</ul>
+<h1 id="contributing">Contributing</h1>
+<p>Silk.NET uses and encourages <a href="https://medium.com/practical-blend/pull-request-first-f6bb667a9b6">Early Pull Requests</a>. Please don't wait until you're done to open a PR!</p>
+<ol>
+<li>Install <a href="https://git-scm.com/downloads">Git</a> and the <a href="https://www.microsoft.com/net/download">.NET Core SDK</a></li>
+<li><a href="https://github.com/Ultz/Silk.NET/fork">Fork Silk.NET</a></li>
+<li>Create a branch on your fork.</li>
+<li>Add an empty commit to start your work off (and let you open a PR): <code>git commit --allow-empty -m &quot;start of [thing you're working on]&quot;</code></li>
+<li>Open a Pull request with <code>[WIP]</code> in the title. Do this <strong>before</strong> you actually start working.</li>
+<li>Make your commits in small, incremental steps with clear descriptions.</li>
+<li>Tag a maintainer when you're done and ask for a review!</li>
+</ol>
+<h1 id="documentation">Documentation</h1>
+<p>Nothing here yet, but don't worry - we're working on it.</p>
+<p>Several examples can be found in the <code>examples</code> folder.</p>
+<p>You can find the Lab in the <code>src/Lab</code> folder. While many of these projects demonstrate functionality of Silk, these are intended more as experiments and tests for the library itself, and often demonstrate bad programming practices. Use with caution!</p>
+<h1 id="join-the-conversation">Join the conversation</h1>
+<p>Come chat with us on <a href="https://discord.gg/DTHHXRt">Discord</a>!</p>
+<h1 id="license">License</h1>
+<p>Silk.NET is distributed under the very permissive MIT/X11 license and all dependencies are distributed under MIT-compatible licenses.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
