@@ -91,6 +91,9 @@
       <a class="xref" href="Silk.NET.Windowing.Common.IWindow.html#Silk_NET_Windowing_Common_IWindow_Monitor">IWindow.Monitor</a>
     </div>
     <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IWindow.html#Silk_NET_Windowing_Common_IWindow_IsClosing">IWindow.IsClosing</a>
+    </div>
+    <div>
       <a class="xref" href="Silk.NET.Windowing.Common.IWindow.html#Silk_NET_Windowing_Common_IWindow_Move">IWindow.Move</a>
     </div>
     <div>
@@ -121,6 +124,9 @@
       <a class="xref" href="Silk.NET.Windowing.Common.IWindowProperties.html#Silk_NET_Windowing_Common_IWindowProperties_WindowBorder">IWindowProperties.WindowBorder</a>
     </div>
     <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IWindowProperties.html#Silk_NET_Windowing_Common_IWindowProperties_TransparentFramebuffer">IWindowProperties.TransparentFramebuffer</a>
+    </div>
+    <div>
       <a class="xref" href="Silk.NET.Windowing.Common.IWindowHost.html#Silk_NET_Windowing_Common_IWindowHost_CreateWindow_Silk_NET_Windowing_Common_WindowOptions_">IWindowHost.CreateWindow(WindowOptions)</a>
     </div>
     <div>
@@ -131,9 +137,6 @@
     </div>
     <div>
       <a class="xref" href="Silk.NET.Windowing.Common.IView.html#Silk_NET_Windowing_Common_IView_IsVulkanSupported">IView.IsVulkanSupported</a>
-    </div>
-    <div>
-      <a class="xref" href="Silk.NET.Windowing.Common.IView.html#Silk_NET_Windowing_Common_IView_IsClosing">IView.IsClosing</a>
     </div>
     <div>
       <a class="xref" href="Silk.NET.Windowing.Common.IView.html#Silk_NET_Windowing_Common_IView_IsRunningSlowly">IView.IsRunningSlowly</a>
@@ -169,6 +172,9 @@
       <a class="xref" href="Silk.NET.Windowing.Common.IView.html#Silk_NET_Windowing_Common_IView_DoEvents">IView.DoEvents()</a>
     </div>
     <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IView.html#Silk_NET_Windowing_Common_IView_ContinueEvents">IView.ContinueEvents()</a>
+    </div>
+    <div>
       <a class="xref" href="Silk.NET.Windowing.Common.IView.html#Silk_NET_Windowing_Common_IView_Reset">IView.Reset()</a>
     </div>
     <div>
@@ -202,6 +208,9 @@
       <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_ShouldSwapAutomatically">IViewProperties.ShouldSwapAutomatically</a>
     </div>
     <div>
+      <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_IsEventDriven">IViewProperties.IsEventDriven</a>
+    </div>
+    <div>
       <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_FramesPerSecond">IViewProperties.FramesPerSecond</a>
     </div>
     <div>
@@ -222,12 +231,18 @@
     <div>
       <a class="xref" href="Silk.NET.Windowing.Common.IViewProperties.html#Silk_NET_Windowing_Common_IViewProperties_PreferredDepthBufferBits">IViewProperties.PreferredDepthBufferBits</a>
     </div>
+    <div>
+      <a class="xref" href="Silk.NET.Core.Contexts.IGLContextSource.html#Silk_NET_Core_Contexts_IGLContextSource_GLContext">IGLContextSource.GLContext</a>
+    </div>
+    <div>
+      <a class="xref" href="Silk.NET.Core.Contexts.IVkSurfaceSource.html#Silk_NET_Core_Contexts_IVkSurfaceSource_VkSurface">IVkSurfaceSource.VkSurface</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Silk.NET.Windowing.Common.html">Silk.NET.Windowing.Common</a></h6>
   <h6><strong>Assembly</strong>: Silk.NET.Windowing.Common.dll</h6>
   <h5 id="Silk_NET_Windowing_Common_IVulkanWindow_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IVulkanWindow : IVulkanView, IWindow, IWindowProperties, IWindowHost, IView, IViewProperties</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IVulkanWindow : IVulkanView, IWindow, IWindowProperties, IWindowHost, IView, IViewProperties, IGLContextSource, IVkSurfaceSource, IDisposable</code></pre>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
@@ -253,10 +268,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Ultz/Silk.NET/new/01e38d37d38f4a667ea63be6f8386c027c6ab569/apiSpec/new?filename=Silk_NET_Windowing_Common_IVulkanWindow.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IVulkanWindow%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Ultz/Silk.NET/new/554af444457e52691cf87c479f9c9a5c77f1ff59/apiSpec/new?filename=Silk_NET_Windowing_Common_IVulkanWindow.md&amp;value=---%0Auid%3A%20Silk.NET.Windowing.Common.IVulkanWindow%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Ultz/Silk.NET/blob/01e38d37d38f4a667ea63be6f8386c027c6ab569/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IVulkanWindow.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Ultz/Silk.NET/blob/554af444457e52691cf87c479f9c9a5c77f1ff59/src/Windowing/Silk.NET.Windowing.Common/Interfaces/IVulkanWindow.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
