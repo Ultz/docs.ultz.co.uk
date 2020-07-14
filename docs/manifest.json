@@ -35625,10 +35625,10 @@
       "output": {
         ".html": {
           "relative_path": "Silk.NET/api/index.html",
-          "hash": "vYm6qjGFRfMDPDlHdb8uYw=="
+          "hash": "2L+AwYCHkaLwugupPUFXXg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -35637,10 +35637,10 @@
       "output": {
         ".html": {
           "relative_path": "Silk.NET/index.html",
-          "hash": "GYlol3w7U+6Utz0xyJlQxw=="
+          "hash": "6EYfGGbDp9kwGjB9cPEdTA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -35649,10 +35649,10 @@
       "output": {
         ".html": {
           "relative_path": "Silk.NET/opengl/intro.html",
-          "hash": "gRKWmOeekkrwPOxaRk81+g=="
+          "hash": "ehRvat8s+hhUhU4BOha5aQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -35685,10 +35685,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "pmolRjOo2aSu5FFlrJ0dIw=="
+          "hash": "BtCK0qThh9WdK1pvLG2pJQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -35707,23 +35707,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 4,
-          "skipped_file_count": 4
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 2968,
-          "skipped_file_count": 18
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -35736,8 +35738,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
