@@ -1,0 +1,5 @@
+#- name: Introduction
+#  href: intro.md
+# put new stuff above the troubleshooting link ^^^^^^
+- name: Troubleshooting
+  href: troubleshooting.md

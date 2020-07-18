@@ -6,3 +6,6 @@
 - name: API Reference
   href: api/toc.yml
   topicHref: api/index.md
+- name: Windowing Guide
+  href: windowing/toc.yml
+#  topicHref: windowing/index.md
