@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- powershell: |
+    choco install docfx -y
+    docfx metadata
+    docfx metadata
+    docfx build
+    if ($lastexitcode -ne 0){
+      throw ("Error generating document")
+    }
+  displayName: "docfx build"
+- script: |
+    git config user.name Ultz
+    git config user.email 31213871+UltzLtd@users.noreply.github.com
+    git add .
+    git commit -m "Site rebuild for $(Build.BuildId)"
+    git push
+  displayName: 'Publish site'
