@@ -12,14 +12,16 @@ pool:
 steps:
 - checkout: self
   submodules: true
-- powershell: |
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '3.1'
+    includePreviewVersions: true
+- script: |
     choco install docfx -y
     docfx metadata
     docfx metadata
     docfx build
-    if ($lastexitcode -ne 0){
-      throw ("Error generating document")
-    }
   displayName: "docfx build"
 - script: |
     git config user.name Ultz
