@@ -1,5 +1,5 @@
 # Common exceptions
-## NotSupportedException: Couldn't find a suitable windowing platform.
+## PlatformNotSupportedException: Couldn't find a suitable windowing platform.
 ### Symptoms
 When attempting to call Window.Create, a NotSupportedException is thrown with a message indicating that the windowing system couldn't find a windowing platform.
 
