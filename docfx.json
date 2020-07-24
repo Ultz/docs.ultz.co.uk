@@ -26,7 +26,8 @@
         ],
         "exclude": [
           "ext/**.md",
-          "ext/**.yml"
+          "ext/**.yml",
+          "build/**.yml"
         ]
       }
     ],
