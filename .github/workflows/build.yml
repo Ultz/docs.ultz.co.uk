@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  Build:
+    # The type of runner that the job will run on
+    runs-on: windows-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1.5.0
+      with:
+        # SDK version to use. Examples: 2.2.104, 3.1, 3.1.x
+        dotnet-version: 3.1.302 # optional
+    - name: Build site
+      run: |
+        choco install docfx -y
+        docfx metadata
+        docfx metadata
+        docfx build
+    - name: Publish site
+      run: |
+        git config user.name Ultz
+        git config user.email 31213871+UltzLtd@users.noreply.github.com
+        git remote set-url origin https://UltzLtd:{{ secrets.ULTZLTD_TOKEN }}@github.com/Ultz/docs.ultz.co.uk
+        git fetch
+        git add docs/
+        git commit -m "Site rebuild for {{ env.GITHUB_RUN_NUMBER }}"
+        git push origin HEAD:master
