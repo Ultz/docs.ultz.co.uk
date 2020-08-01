@@ -33,12 +33,10 @@ jobs:
         docfx metadata
         docfx build
     - name: Publish site
-      env:
-        ULTZLTD_CREDENTIALS: 'UltzLtd:{{ secrets.ULTZLTD_TOKEN }}@'
       run: |
         git config user.name Ultz
         git config user.email 31213871+UltzLtd@users.noreply.github.com
-        git remote set-url origin https://$ULTZLTD_CREDENTIALSgithub.com/Ultz/docs.ultz.co.uk
+        git remote set-url origin "https://UltzLtd:{{ secrets.ULTZLTD_TOKEN }}@github.com/Ultz/docs.ultz.co.uk"
         git fetch
         git add docs/
         git commit -m "Site rebuild for {{ env.GITHUB_RUN_NUMBER }}"
