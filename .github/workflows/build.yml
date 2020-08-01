@@ -36,8 +36,8 @@ jobs:
       run: |
         git config user.name Ultz
         git config user.email 31213871+UltzLtd@users.noreply.github.com
-        git remote set-url origin "https://UltzLtd:{{ secrets.ULTZLTD_TOKEN }}@github.com/Ultz/docs.ultz.co.uk"
+        git remote set-url origin "https://UltzLtd:${{ secrets.ULTZLTD_TOKEN }}@github.com/Ultz/docs.ultz.co.uk"
         git fetch
         git add docs/
-        git commit -m "Site rebuild for {{ env.GITHUB_RUN_NUMBER }}"
+        git commit -m "Site rebuild for ${{ env.GITHUB_RUN_NUMBER }}"
         git push origin HEAD:master
