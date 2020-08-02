@@ -43,5 +43,5 @@ jobs:
         git add docs/
     - name: Commit and publish site
       run: |
-        git commit -m "Site rebuild for ${{ env.GITHUB_RUN_NUMBER }}"
+        git commit -m "Site rebuild for ${{ github.run_number }}"
         git push origin HEAD:master
