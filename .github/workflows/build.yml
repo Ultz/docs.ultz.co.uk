@@ -32,12 +32,16 @@ jobs:
         docfx metadata
         docfx metadata
         docfx build
-    - name: Publish site
+    - name: Configure git bot information
       run: |
         git config user.name Ultz
         git config user.email 31213871+UltzLtd@users.noreply.github.com
+    - name: Configure git repository
+      run: |
         git remote set-url origin "https://UltzLtd:${{ secrets.ULTZLTD_TOKEN }}@github.com/Ultz/docs.ultz.co.uk"
         git fetch
         git add docs/
+    - name: Commit and publish site
+      run: |
         git commit -m "Site rebuild for ${{ env.GITHUB_RUN_NUMBER }}"
         git push origin HEAD:master
