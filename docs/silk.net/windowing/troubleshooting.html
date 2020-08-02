@@ -71,7 +71,7 @@
 
 <h2 id="platformnotsupportedexception-couldnt-find-a-suitable-windowing-platform">PlatformNotSupportedException: Couldn't find a suitable windowing platform.</h2>
 <h3 id="symptoms">Symptoms</h3>
-<p>When attempting to call Window.Create, a NotSupportedException is thrown with a message indicating that the windowing system couldn't find a windowing platform.</p>
+<p>When attempting to call Window.Create, a PlatformNotSupportedException is thrown with a message indicating that the windowing system couldn't find a windowing platform.</p>
 <h3 id="cause">Cause</h3>
 <p>There are multiple causes for this particular exception, however the most common are:</p>
 <ol>
@@ -86,7 +86,6 @@
 <li>Download or build your chosen native API (you will be able to find instructions on how to do this in their repositories)
 <ul>
 <li>GLFW: <a href="https://github.com/glfw/glfw">https://github.com/glfw/glfw</a></li>
-<li>Allegro: <a href="https://github.com/liballeg/allegro5/">https://github.com/liballeg/allegro5/</a></li>
 </ul>
 </li>
 <li>Retreive the resultant binary files and place them in your program's output directory.</li>
@@ -116,31 +115,6 @@
 <td>GLFW 3.3</td>
 <td>libglfw.3.dylib</td>
 </tr>
-<tr>
-<td>Windows</td>
-<td>Allegro 5.2</td>
-<td>allegro-5.2.dll</td>
-</tr>
-<tr>
-<td>Linux</td>
-<td>Allegro 5.2</td>
-<td>liballegro.so.5.2</td>
-</tr>
-<tr>
-<td>MacOS</td>
-<td>Allegro 5.2</td>
-<td>liballegro.5.2.dylib</td>
-</tr>
-<tr>
-<td>iOS</td>
-<td>Allegro 5.2</td>
-<td>TBD</td>
-</tr>
-<tr>
-<td>Android</td>
-<td>Allegro 5.2</td>
-<td>TBD</td>
-</tr>
 </tbody>
 </table>
 <h4 id="ensure-the-underlying-api-supports-the-current-platform">Ensure the underlying API supports the current platform</h4>
@@ -160,12 +134,6 @@
 <td>GLFW 3.3</td>
 <td>Windows, MacOS, Linux</td>
 <td>Silk.NET.Windowing.Desktop</td>
-</tr>
-<tr>
-<td>2.X</td>
-<td>Allegro 5.2</td>
-<td>Windows, MacOS, Linux, iOS, Android</td>
-<td>Silk.NET.Windowing.Allegro</td>
 </tr>
 </tbody>
 </table>
