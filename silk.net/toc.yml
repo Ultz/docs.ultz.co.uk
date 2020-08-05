@@ -3,9 +3,11 @@
 #- name: OpenGL Tutorials
 #  href: opengl/toc.yml
 #  topicHref: opengl/intro.md
-- name: API Reference
-  href: api/toc.yml
-  topicHref: api/index.md
 - name: Windowing Guide
   href: windowing/toc.yml
 #  topicHref: windowing/index.md
+- name: API Reference
+  href: api/toc.yml
+  topicHref: api/index.md
+- name: Advanced
+  href: advanced/toc.yml
