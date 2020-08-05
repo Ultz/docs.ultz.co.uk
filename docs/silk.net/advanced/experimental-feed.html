@@ -93,10 +93,11 @@
 &lt;/Project&gt;
 </code></pre>
 <p>In order to use the experimental feed, you must change this project file slightly. Add the following line to your project:</p>
-<pre><code class="lang-diff">  &lt;PropertyGroup&gt;
+<pre><code class="lang-xml">  &lt;PropertyGroup&gt;
     &lt;OutputType&gt;Exe&lt;/OutputType&gt;
     &lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;
-+    &lt;RestoreSources&gt;$(RestoreSources);https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json&lt;/RestoreSources&gt;
+    &lt;!-- Add the experimental feed as a restore source --&gt;
+    &lt;RestoreSources&gt;$(RestoreSources);https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json&lt;/RestoreSources&gt;
   &lt;/PropertyGroup&gt;
 </code></pre>
 <h2 id="install-an-experimental-version">Install an experimental version</h2>
@@ -106,9 +107,8 @@
 <p>There may be some older packages with higher version numbers. We recently underwent a version reset when migrating our CI system, so please prefer the packages suffixed with <code>.0</code></p>
 </div>
 <p>At the time of writing, the latest version is <code>2.0.0-build97.0</code>. Now to install this package, you can use your IDE's built-in NuGet client, <code>dotnet package add</code>, or just modify the project file again like so:</p>
-<pre><code class="lang-diff">  &lt;ItemGroup&gt;
--    &lt;PackageReference Include=&quot;Silk.NET&quot; Version=&quot;1.4.0&quot; /&gt;
-+    &lt;PackageReference Include=&quot;Silk.NET&quot; Version=&quot;2.0.0-build97.0&quot; /&gt;
+<pre><code class="lang-xml">  &lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;Silk.NET&quot; Version=&quot;2.0.0-build97.0&quot; /&gt;
   &lt;/ItemGroup&gt;
 </code></pre>
 <p>Now you have access to bleeding-edge experimental builds of Silk.NET. Have fun!</p>
