@@ -27,7 +27,7 @@ Right now, your project should look something like this:
 
 In order to use the experimental feed, you must change this project file slightly. Add the following line to your project:
 
-```diff
+```xml
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
@@ -45,7 +45,7 @@ Now .NET has access to the experimental feed, it's time to install an experiment
 
 At the time of writing, the latest version is `2.0.0-build97.0`. Now to install this package, you can use your IDE's built-in NuGet client, `dotnet package add`, or just modify the project file again like so:
 
-```diff
+```xml
   <ItemGroup>
     <PackageReference Include="Silk.NET" Version="2.0.0-build97.0" />
   </ItemGroup>
