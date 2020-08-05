@@ -31,7 +31,8 @@ In order to use the experimental feed, you must change this project file slightl
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-+    <RestoreSources>$(RestoreSources);https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json</RestoreSources>
+    <!-- Add the experimental feed as a restore source -->
+    <RestoreSources>$(RestoreSources);https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json</RestoreSources>
   </PropertyGroup>
 ```
 
@@ -46,8 +47,7 @@ At the time of writing, the latest version is `2.0.0-build97.0`. Now to install 
 
 ```diff
   <ItemGroup>
--    <PackageReference Include="Silk.NET" Version="1.4.0" />
-+    <PackageReference Include="Silk.NET" Version="2.0.0-build97.0" />
+    <PackageReference Include="Silk.NET" Version="2.0.0-build97.0" />
   </ItemGroup>
 ```
 
