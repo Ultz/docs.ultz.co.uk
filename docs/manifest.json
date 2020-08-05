@@ -16,6 +16,18 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "silk.net/advanced/experimental-feed.md",
+      "output": {
+        ".html": {
+          "relative_path": "silk.net/advanced/experimental-feed.html",
+          "hash": "saW5c1nNXdm9tkQcGvyKyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "silk.net/api/Silk.NET.Core.Attributes.ExtensionAttribute.yml",
       "output": {
@@ -35685,7 +35697,7 @@
       "output": {
         ".html": {
           "relative_path": "silk.net/toc.html",
-          "hash": "NWnNyuOUKPCxNr1esxZoaw=="
+          "hash": "A0h4NxmAAYw2efl3A6mp0Q=="
         }
       },
       "is_incremental": false,
@@ -35730,7 +35742,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 5,
+          "total_file_count": 6,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

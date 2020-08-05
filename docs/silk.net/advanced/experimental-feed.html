@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Experimental Feed </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Experimental Feed ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="experimental-feed">Experimental Feed</h1>
+
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The experimental feed is not recommended for use for anything beyond playing around with the new features. We don't officially support these builds as they may be unstable, and should not be used in production.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Changes in the experimental feed happen rapidly. We recommend joining the <a href="https://discord.gg/DTHHXRt">Silk.NET Discord server</a> so that you can keep up with development.</p>
+</div>
+<h2 id="configure-your-project">Configure your project</h2>
+<p>Right now, your project should look something like this:</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;Silk.NET&quot; Version=&quot;1.4.0&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+&lt;/Project&gt;
+</code></pre>
+<p>In order to use the experimental feed, you must change this project file slightly. Add the following line to your project:</p>
+<pre><code class="lang-diff">  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;
++    &lt;RestoreSources&gt;$(RestoreSources);https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json&lt;/RestoreSources&gt;
+  &lt;/PropertyGroup&gt;
+</code></pre>
+<h2 id="install-an-experimental-version">Install an experimental version</h2>
+<p>Now .NET has access to the experimental feed, it's time to install an experimental package. Check for the latest version here: <a href="https://dev.azure.com/UltzOS/Silk.NET/_packaging?_a=package&amp;feed=Experimental&amp;package=Silk.NET&amp;protocolType=NuGet">https://dev.azure.com/UltzOS/Silk.NET/_packaging?_a=package&amp;feed=Experimental&amp;package=Silk.NET&amp;protocolType=NuGet</a></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There may be some older packages with higher version numbers. We recently underwent a version reset when migrating our CI system, so please prefer the packages suffixed with <code>.0</code></p>
+</div>
+<p>At the time of writing, the latest version is <code>2.0.0-build97.0</code>. Now to install this package, you can use your IDE's built-in NuGet client, <code>dotnet package add</code>, or just modify the project file again like so:</p>
+<pre><code class="lang-diff">  &lt;ItemGroup&gt;
+-    &lt;PackageReference Include=&quot;Silk.NET&quot; Version=&quot;1.4.0&quot; /&gt;
++    &lt;PackageReference Include=&quot;Silk.NET&quot; Version=&quot;2.0.0-build97.0&quot; /&gt;
+  &lt;/ItemGroup&gt;
+</code></pre>
+<p>Now you have access to bleeding-edge experimental builds of Silk.NET. Have fun!</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Ultz/docs.ultz.co.uk/blob/master/silk.net/advanced/experimental-feed.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (C) Ultz Limited.</span>
+          </div>
+        </div>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
