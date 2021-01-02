@@ -32,7 +32,7 @@ jobs:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     - name: Build site
       run: |
-        choco install docfx 2.56.1 -y
+        choco install docfx --version=2.56.1 -y
         docfx metadata
         docfx metadata
         docfx build
